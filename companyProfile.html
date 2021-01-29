@@ -19,7 +19,14 @@
                 <li class="floatLeft"><a href="">Home</a></li>
             </ul>
         </div>
+        <p id="demo">
+
+        </p>
         <div class="banner">
+            <img class="slides" src="img/m1.jpg" alt="">
+            <img class="slides" src="img/m2.jpg" alt="">
+            <img class="slides" src="img/m3.jpg" alt="">
+            <img class="slides" src="img/m4.jpg" alt="">
 
         </div>
         <div class="main">
@@ -47,6 +54,25 @@
             <p class="kanan">Powered by <strong>Devcamp</strong> </p>
         </div>
     </div>
+    <script>
+        var indexFoto = 0;
+        carosel();
+
+        function carosel() {
+            var i;
+            var x = document.getElementsByClassName("slides");
+
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            indexFoto++;
+            if (indexFoto > x.length) {
+                indexFoto = 1;
+            }
+            x[indexFoto - 1].style.display = "block";
+            setTimeout(carosel, 3000);
+        }
+    </script>
 </body>
 
 </html>
